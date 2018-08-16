@@ -1,0 +1,22 @@
+<div class="text-area">
+  <label for="{{name}}">{{ label }}</label>
+  <div class="text-area-and-icon">
+    <textarea
+      [(ngModel)]="value"
+      name="{{name}}"
+      id="{{name}}"
+      class="{{class}}"
+      placeholder="{{placeholder}}"
+      (ngModelChange)="setInput()"
+    ></textarea>
+    <i
+      *ngIf="iconClass"
+      class="{{iconClass}}"
+      (click)="iconClick ? iconClick() : ''"
+      (mousedown)="iconDownUp ? iconDownUp() : ''"
+      (mouseup)="iconDownUp ? iconDownUp() :''"
+      (mouseleave)="iconLeave ? iconLeave() : ''"
+    ></i>
+  </div>
+  <span class="text-area-error" *ngIf="error">{{label}} field is invalid</span>
+</div>

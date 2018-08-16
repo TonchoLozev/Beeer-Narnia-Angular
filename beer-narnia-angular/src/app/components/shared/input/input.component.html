@@ -1,0 +1,22 @@
+<div class="input">
+  <label for="{{name}}">{{label}}</label>
+  <div class="input-and-icon">
+    <input
+      [(ngModel)]="value"
+      name="{{name}}"
+      id="{{name}}"
+      class="{{class}}"
+      type="{{type}}"
+      (ngModelChange)="setInput()"
+    >
+    <i
+      *ngIf="iconClass"
+      class="{{iconClass}}"
+      (click)="iconClick ? iconClick() : ''"
+      (mousedown)="iconDownUp ? iconDownUp() : ''"
+      (mouseup)="iconDownUp ? iconDownUp() :''"
+      (mouseleave)="iconLeave ? iconLeave() : ''"
+    ></i>
+  </div>
+  <span class="input-error" *ngIf="error">{{label}} field is invalid</span>
+</div>

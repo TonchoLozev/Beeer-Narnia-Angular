@@ -1,0 +1,15 @@
+<div class="button">
+  <i *ngIf="iconClass" class="{{iconClass}}"></i>
+  <button *ngIf="link"
+          class="{{class}}"
+          type="{{type}}"
+          (click)="buttonClick ? buttonClick(link):''"
+  >{{label}}
+  </button>
+  <button *ngIf="!link"
+          class="{{class}}"
+          type="{{type}}"
+          (click)="buttonClick ? buttonClick():''"
+  >{{label}}
+  </button>
+</div>

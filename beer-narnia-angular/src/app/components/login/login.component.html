@@ -1,0 +1,42 @@
+<div class="login-form">
+
+  <form (submit)="onSubmit()">
+
+    <p class="title">Log in</p>
+
+    <app-input
+      [label]="'User Name'"
+      [class]="'login-inputs'"
+      [iconClass]="'icon-delete-text-icon'"
+      [name]="'username'"
+      [type]="'text'"
+      [(value)]="model.username"
+      (setValue)="this.model.username = $event"
+      [iconClick]="deleteUserNameInput"
+    >
+    </app-input>
+
+    <app-input
+      [label]="'Password'"
+      [class]="'login-inputs'"
+      [iconClass]="'icon-preview-icon'"
+      [name]="'password'"
+      [type]="passwordShow ? 'text' : 'password'"
+      [(value)]="model.password"
+      (setValue)="this.model.password = $event"
+      [iconDownUp]="showPassword"
+      [iconLeave]="hidePassword"
+    >
+    </app-input>
+
+    <app-button
+      [label]="'Log in'"
+      [class]="'login-button'"
+      [iconClass]=""
+      [type]="'submit'"
+    >
+    </app-button>
+
+  </form>
+
+</div>

@@ -1,0 +1,67 @@
+<div class="header">
+
+  <div class="cart-button">
+
+    <app-button
+      [class]="'nav-button'"
+      [type]="'button'"
+      [iconClass]="'icon-cart'"
+    >
+    </app-button>
+    <i
+      *ngIf="itemsCount > 0"
+      class="items-count"
+    >{{itemsCount}}</i>
+
+  </div>
+
+  <app-button
+    *ngIf="isAdmin"
+    [class]="'nav-button'"
+    [label]="'Requests'"
+    [type]="'button'">
+  </app-button>
+
+  <app-button
+    *ngIf="isLogged && !isAdmin"
+    [class]="'nav-button'"
+    [label]="'Request access'"
+    [iconClass]="'icon-users'"
+    [type]="'button'">
+  </app-button>
+
+  <app-button
+    [class]="'nav-button'"
+    [label]="'Home'"
+    [link]="'home'"
+    [buttonClick]="changeLink"
+    [type]="'button'">
+  </app-button>
+
+  <app-button
+    *ngIf="isLogged"
+    [class]="'nav-button'"
+    [label]="'Logout'"
+    [type]="'button'">
+  </app-button>
+
+  <div class="auth-buttons"
+       *ngIf="!isLogged">
+
+    <app-button
+      [class]="'nav-button'"
+      [label]="'Login'"
+      [type]="'button'"
+      [link]="'login'"
+      [buttonClick]="changeLink">
+    </app-button>
+
+    <app-button
+      [class]="'nav-button'"
+      [label]="'Register'"
+      [type]="'button'">>
+    </app-button>
+
+  </div>
+
+</div>

@@ -1,0 +1,70 @@
+.header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222222;
+  position: fixed;
+  height: 45px;
+}
+
+.cart-button{
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.cart-button:hover{
+  cursor: pointer;
+  color: #f2f2f2;
+}
+
+.cart-button app-button{
+  margin-right: -18px;
+}
+
+.icon-cart{
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.items-count{
+  text-align: center;
+  justify-content: center;
+  font-size: 11px;
+  width: 13px;
+  background: red;
+  height: 13px;
+  margin-top: 7px;
+  border-radius: 100%;
+  padding-right: 2px;
+  font-family: monospace;
+}
+
+.items-count:hover{
+  cursor: default;
+}
+
+.icon-users{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -5px;
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 19px;
+}
+
+.icon-users:hover{
+  cursor: pointer;
+  color: #f2f2f2;
+}
+
+.auth-buttons{
+  display: flex;
+}

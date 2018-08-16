@@ -1,0 +1,58 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 22px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+label {
+  padding-bottom: 30px;
+  height: 19px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  color: #475155;
+}
+
+.input-and-icon {
+  border-bottom: 1px solid #a5a5a5;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-inputs:focus {
+  outline: none;
+}
+
+.request-access-inputs{
+  outline: none;
+}
+
+i {
+  cursor: pointer;
+}
+
+.login-inputs {
+  border-width: 0;
+  width: 448px;
+  padding-bottom: 7px;
+}
+
+.request-access-inputs{
+  border-width: 0;
+  width: 448px;
+  padding-bottom: 7px;
+}
+
+.input-error{
+  color: crimson;
+  font-size: 10px;
+  padding: 0;
+}
