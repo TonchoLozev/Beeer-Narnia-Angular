@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.model.username, this.model.password).subscribe(userInfo => {
 
         authHelper.saveSession(userInfo);
+        sessionStorage.setItem('roleId', userInfo._kmd.roles[0].roleId);
 
         this.toastr.success('Successfully logged in');
         this.router.navigateByUrl(`home`);

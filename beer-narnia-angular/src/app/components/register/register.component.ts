@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
 
         this.rolesService.makeRegularUser(userInfo._id).subscribe(role => {
           sessionStorage.setItem('roleId', role.roleId);
-        }, error => console.log(error));
+        }, error1 => console.log(error1));
 
         this.toastr.success('Successfully registered');
         this.router.navigateByUrl(`home`);
@@ -62,7 +62,9 @@ export class RegisterComponent implements OnInit {
         } else if (err.status === 400) {
           this.toastr.error('Email already exists');
         }
+        return;
       });
+
     } else {
       this.toastr.error(validateReg)
     }

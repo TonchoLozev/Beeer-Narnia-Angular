@@ -17,7 +17,7 @@ export class RolesService {
 
   makeRegularUser(userId) {
 
-    if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string' || typeof (userId) !== 'string') {
+    if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');
     }
 
@@ -36,7 +36,7 @@ export class RolesService {
 
   removeRegularRole(userId) {
 
-    if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string' || typeof (userId) !== 'string') {
+    if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');
     }
 
@@ -55,7 +55,7 @@ export class RolesService {
 
   makeAdminUser(userId) {
 
-    if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string' || typeof (userId) !== 'string') {
+    if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');
     }
 
