@@ -25,13 +25,10 @@ label {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .login-inputs:focus {
-  outline: none;
-}
-
-.request-access-inputs{
   outline: none;
 }
 
@@ -45,14 +42,16 @@ i {
   padding-bottom: 7px;
 }
 
-.request-access-inputs{
+.register-inputs:focus {
+  outline: none;
+}
+
+.register-inputs {
   border-width: 0;
   width: 448px;
   padding-bottom: 7px;
 }
 
-.input-error{
-  color: crimson;
-  font-size: 10px;
-  padding: 0;
+.icon-cross{
+  font-size: 13px;
 }

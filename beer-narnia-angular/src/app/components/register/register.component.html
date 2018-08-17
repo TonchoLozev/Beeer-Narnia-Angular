@@ -1,0 +1,67 @@
+<div class="register-form">
+
+  <form (submit)="onSubmit()">
+
+    <p class="title">Log in</p>
+
+    <app-input
+      [label]="'User Name'"
+      [class]="'register-inputs'"
+      [iconClass]="'icon-cross'"
+      [name]="'username'"
+      [type]="'text'"
+      [(value)]="model.username"
+      (setValue)="this.model.username = $event"
+      [iconClick]="deleteUserNameInput"
+    >
+    </app-input>
+
+    <app-input
+      [label]="'Email'"
+      [class]="'register-inputs'"
+      [iconClass]="'icon-cross'"
+      [name]="'email'"
+      [type]="'text'"
+      [(value)]="model.email"
+      (setValue)="this.model.email = $event"
+      [iconClick]="deleteEmailInput"
+    >
+    </app-input>
+
+    <app-input
+      [label]="'Password'"
+      [class]="'register-inputs'"
+      [iconClass]="'icon-eye'"
+      [name]="'password'"
+      [type]="passwordShow ? 'text' : 'password'"
+      [(value)]="model.password"
+      (setValue)="this.model.password = $event"
+      [iconDownUp]="showPassword"
+      [iconLeave]="hidePassword"
+    >
+    </app-input>
+
+    <app-input
+      [label]="'Repeat Password'"
+      [class]="'register-inputs'"
+      [iconClass]="'icon-eye'"
+      [name]="'repeat-password'"
+      [type]="repeatPasswordShow ? 'text' : 'password'"
+      [(value)]="model.repeatPassword"
+      (setValue)="this.model.repeatPassword = $event"
+      [iconDownUp]="showRepeatPassword"
+      [iconLeave]="hideRepeatPassword"
+    >
+    </app-input>
+
+    <app-button
+      [label]="'Register'"
+      [class]="'register-button'"
+      [iconClass]=""
+      [type]="'submit'"
+    >
+    </app-button>
+
+  </form>
+
+</div>

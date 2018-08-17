@@ -10,3 +10,23 @@
   cursor: pointer;
   color: #f2f2f2;
 }
+
+.login-button{
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.login-button:hover{
+  cursor: pointer;
+}
+
+.register-button{
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.register-button:hover{
+  cursor: pointer;
+}
