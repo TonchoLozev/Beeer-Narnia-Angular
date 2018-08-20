@@ -32,13 +32,13 @@ export class AuthService {
     });
 
     return this.http.post(this.loginUrl, bodyString, {headers: headers})
-      .map((res: Response) => {
+      .map((res) => {
         return res;
       })
       .catch((error: any) => throwError(error || 'Server error'));
   }
 
-  register(username, email, password) {
+  register(username, email, password): Observable<any> {
 
     if (arguments.length < 3 || arguments.length > 3 || typeof (username) !== 'string' || typeof (password) !== 'string' || typeof (email) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');
@@ -51,7 +51,7 @@ export class AuthService {
     });
 
     return this.http.post(this.registerUrl, bodyString, {headers: headers})
-      .map((res: Response) => {
+      .map((res) => {
         return res;
       })
       .catch((error: any) => throwError(error || 'Server error'));

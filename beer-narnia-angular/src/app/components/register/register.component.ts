@@ -46,7 +46,6 @@ export class RegisterComponent implements OnInit {
 
     if (validateReg === 'success') {
       this.authService.register(this.model.username, this.model.email, this.model.password).subscribe(userInfo => {
-
         authHelper.saveSession(userInfo);
 
         this.rolesService.makeRegularUser(userInfo._id).subscribe(role => {

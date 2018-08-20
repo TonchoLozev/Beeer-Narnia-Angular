@@ -4,6 +4,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
+import {StoreModule} from '@ngrx/store';
+import {userReducer} from "./store/reducers/user.reducer";
+
 import {AppRoutesModule} from './routes/routes.module';
 import {HomeModule} from './components/home/home.module';
 import {SharedModule} from './components/shared/shared.module';
@@ -13,7 +16,6 @@ import {RegisterModule} from "./components/register/register.module";
 import {AppComponent} from './app.component';
 
 import {AuthService} from "./services/auth.service";
-import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,9 @@ import { RegisterComponent } from './components/register/register.component';
     HomeModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    StoreModule.forRoot({
+      user: userReducer,
+    }),
     BrowserAnimationsModule,
     AppRoutesModule,
     SharedModule,

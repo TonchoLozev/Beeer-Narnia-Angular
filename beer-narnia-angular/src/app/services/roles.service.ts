@@ -15,7 +15,7 @@ export class RolesService {
   constructor(private http: HttpClient) {
   }
 
-  makeRegularUser(userId) {
+  makeRegularUser(userId): Observable<any>{
 
     if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');
@@ -34,7 +34,7 @@ export class RolesService {
       .catch((error: any) => throwError(error || 'Server error'));
   }
 
-  removeRegularRole(userId) {
+  removeRegularRole(userId): Observable<any> {
 
     if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');

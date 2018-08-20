@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
+import {Store} from "@ngrx/store";
+import {AppState} from "../../store/app.state";
+import * as UserActions from '../../store/actions/user.actions';
+
 import {LoginModel} from "./login.model";
 
 import {AuthService} from "../../services/auth.service";
@@ -8,6 +12,9 @@ import {Router} from "@angular/router";
 
 import validateLogin from '../../helpers/validations/validateLogin';
 import {authHelper} from '../../helpers/auth'
+
+import {Observable} from "rxjs";
+import {User} from "../../models/user.model";
 
 
 @Component({
@@ -20,6 +27,7 @@ export class LoginComponent implements OnInit {
   passwordShow: boolean = false;
 
   constructor(
+    private store: Store<AppState>,
     private router: Router,
     public authService: AuthService,
     private toastr: ToastrService
@@ -42,6 +50,8 @@ export class LoginComponent implements OnInit {
 
         authHelper.saveSession(userInfo);
         sessionStorage.setItem('roleId', userInfo._kmd.roles[0].roleId);
+
+        this.store.dispatch(new UserActions.InitUser({username: userInfo.username}));
 
         this.toastr.success('Successfully logged in');
         this.router.navigateByUrl(`home`);
