@@ -18,15 +18,14 @@
   <app-button
     *ngIf="isAdmin"
     [class]="'nav-button'"
-    [label]="'Requests'"
+    [iconClass]="'icon-users'"
     [type]="'button'">
   </app-button>
 
   <app-button
-    *ngIf="isLogged && !isAdmin"
+    *ngIf="username && !isAdmin"
     [class]="'nav-button'"
     [label]="'Request access'"
-    [iconClass]="'icon-users'"
     [type]="'button'">
   </app-button>
 
@@ -39,14 +38,15 @@
   </app-button>
 
   <app-button
-    *ngIf="isLogged"
+    *ngIf="username"
     [class]="'nav-button'"
     [label]="'Logout'"
-    [type]="'button'">
+    [type]="'button'"
+    [buttonClick]="logout">
   </app-button>
 
   <div class="auth-buttons"
-       *ngIf="!isLogged">
+       *ngIf="!username">
 
     <app-button
       [class]="'nav-button'"

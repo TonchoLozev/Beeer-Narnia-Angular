@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {Observable} from "rxjs";
-import {Store} from "@ngrx/store";
 
+import {Store} from "@ngrx/store";
 import {AppState} from "./store/app.state";
 
 @Component({
@@ -19,7 +18,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.store.select('user').subscribe(user => {
-      console.log(user);
       this.username = user.username;
     })
   }

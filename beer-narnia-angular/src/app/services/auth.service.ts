@@ -13,8 +13,9 @@ import {authHelper} from '../helpers/auth';
   providedIn: 'root'
 })
 export class AuthService {
-  loginUrl = 'https://baas.kinvey.com/user/kid_rkgjslEzX/login';
-  registerUrl = 'https://baas.kinvey.com/user/kid_rkgjslEzX/';
+  private loginUrl = 'https://baas.kinvey.com/user/kid_rkgjslEzX/login';
+  private registerUrl = 'https://baas.kinvey.com/user/kid_rkgjslEzX/';
+  private logoutUrl = 'https://baas.kinvey.com/user/kid_rkgjslEzX/_logout';
 
   constructor(private http: HttpClient) {
   }
@@ -51,6 +52,20 @@ export class AuthService {
     });
 
     return this.http.post(this.registerUrl, bodyString, {headers: headers})
+      .map((res) => {
+        return res;
+      })
+      .catch((error: any) => throwError(error || 'Server error'));
+  }
+
+  logout() {
+    const bodyString = JSON.stringify({authtoken: sessionStorage.getItem('authtoken')});
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': authHelper.makeAuth('kinvey')
+    });
+
+    return this.http.post(this.logoutUrl, bodyString, {headers: headers})
       .map((res) => {
         return res;
       })

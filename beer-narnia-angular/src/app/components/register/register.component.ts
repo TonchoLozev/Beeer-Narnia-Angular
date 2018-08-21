@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
+import {Store} from "@ngrx/store";
+import {AppState} from "../../store/app.state";
+import * as UserActions from '../../store/actions/user.actions';
+
 import {RegisterModel} from "./register.model";
 
 import {Router} from "@angular/router";
@@ -9,6 +13,7 @@ import {ToastrService} from "ngx-toastr";
 
 import validateRegister from "../../helpers/validations/validateRegister";
 import {authHelper} from "../../helpers/auth";
+
 
 @Component({
   selector: 'app-register',
@@ -24,7 +29,8 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     public authService: AuthService,
     public rolesService: RolesService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private store: Store<AppState>
   ) {
 
     this.deleteUserNameInput = this.deleteUserNameInput.bind(this);
@@ -51,6 +57,8 @@ export class RegisterComponent implements OnInit {
         this.rolesService.makeRegularUser(userInfo._id).subscribe(role => {
           sessionStorage.setItem('roleId', role.roleId);
         }, error1 => console.log(error1));
+
+        this.store.dispatch(new UserActions.InitUser({username: userInfo.username}));
 
         this.toastr.success('Successfully registered');
         this.router.navigateByUrl(`home`);
