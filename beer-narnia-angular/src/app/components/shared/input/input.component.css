@@ -1,7 +1,6 @@
 .input {
   display: flex;
   flex-direction: column;
-  padding-bottom: 22px;
 }
 
 input:-webkit-autofill {
@@ -9,7 +8,7 @@ input:-webkit-autofill {
 }
 
 label {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   height: 19px;
   font-size: 15px;
   font-weight: normal;

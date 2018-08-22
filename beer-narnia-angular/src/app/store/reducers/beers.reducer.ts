@@ -1,12 +1,13 @@
 import {Beer} from "../../models/beer.model";
-import * as BeersActions from '../actions/beers.action';
+import * as BeersActions from '../actions/beers.actions';
 
-const initialState = {beers: []};
+const beersModel: Beer[] = [];
+const initialState = {beers: beersModel};
 
 export function beersReducer(state = initialState, action: BeersActions.Actions) {
   switch (action.type) {
     case BeersActions.INIT_BEERS:
-      return [action.payload.beers];
+      return {beers: action.payload.beers};
     default:
       return state;
   }

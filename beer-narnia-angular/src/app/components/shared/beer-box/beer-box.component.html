@@ -1,0 +1,21 @@
+<div class="beer-box">
+  <img class="image" src="{{beer.img}}" alt="{{beer.name}}"/>
+  <label class="name">{{beer.name}}</label>
+  <p class="description">{{beer.description}}</p>
+  <label class="price">{{beer.price}}&euro;</label>
+  <div class="buttons">
+    <input
+      [(ngModel)]="count"
+      type="number"
+    >
+    <i
+      class="icon-plus"
+      (click)="plusCount()"
+    ></i>
+    <i
+      class="icon-minus"
+      (click)="minusCount()"
+    ></i>
+  </div>
+  <button (click)="addInCart($event)" data-id="{{index}}">Add in cart</button>
+</div>

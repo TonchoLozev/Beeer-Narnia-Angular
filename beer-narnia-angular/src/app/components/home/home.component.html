@@ -1,7 +1,12 @@
 <div class="home">
-<ul>
-  <li *ngFor="let beer of beers">
-    <p>{{beer.country}}</p>
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let beer of beersToShow; let i = index">
+      <app-beer-box [beer]="beer" [index]="i" [currentPage]="currentPage" [beers]="beers"></app-beer-box>
+    </li>
+  </ul>
+  <ul *ngIf="pageNumbers" class="page-numbers">
+    <li *ngFor="let page of pageNumbers" class="page-number" (click)="changeCurrentPageNumber($event)">
+      {{page}}
+    </li>
+  </ul>
 </div>

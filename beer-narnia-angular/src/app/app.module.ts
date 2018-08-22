@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {StoreModule} from '@ngrx/store';
 import {userReducer} from "./store/reducers/user.reducer";
 import {beersReducer} from "./store/reducers/beers.reducer";
+import {cartReducer} from "./store/reducers/cart.reducer";
 
 import {AppRoutesModule} from './routes/routes.module';
 import {HomeModule} from './components/home/home.module';
@@ -29,7 +30,8 @@ import {AuthService} from "./services/auth.service";
     ToastrModule.forRoot(),
     StoreModule.forRoot({
       user: userReducer,
-      beers: beersReducer
+      beers: beersReducer,
+      cart: cartReducer
     }),
     BrowserAnimationsModule,
     AppRoutesModule,

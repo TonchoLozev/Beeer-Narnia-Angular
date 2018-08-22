@@ -1,5 +1,5 @@
 <div class="input">
-  <label for="{{name}}">{{label}}</label>
+  <label *ngIf="label" for="{{name}}">{{label}}</label>
   <div class="input-and-icon">
     <input
       [(ngModel)]="value"

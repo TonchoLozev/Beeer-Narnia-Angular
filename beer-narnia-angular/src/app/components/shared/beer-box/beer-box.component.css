@@ -1,0 +1,121 @@
+.beer-box {
+  width: 220px;
+  height: 370px;
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.price {
+  font-size: 15px;
+}
+
+img {
+  height: 200px;
+  width: 165px;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  border-bottom: 1px solid #475155;
+}
+
+input {
+  width: 40px;
+  border-width: 0;
+  padding-bottom: 7px;
+  text-align: center;
+}
+
+input:hover {
+  outline: none;
+}
+
+input ::-ms-clear, ::-ms-reveal {
+  display: none;
+}
+
+i {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  padding-right: 10px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+p {
+  font-size: 12px;
+  /* hide text if it more than N lines  */
+  overflow: hidden;
+  /* for set '...' in absolute position */
+  position: relative;
+  /* use this value to count block height */
+  line-height: 1.2em;
+  /* max-height = line-height (1.2) * lines max number (3) */
+  max-height: 3.6em;
+  /* fix problem when last visible word doesn't adjoin right side  */
+  text-align: justify;
+  /* place for '...' */
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+/* create the ... */
+p:before {
+  /* points in the end */
+  content: '...';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of block */
+  right: 0;
+  bottom: 0;
+}
+
+/* hide ... if we have text, which is less than or equal to max lines */
+p:after {
+  /* points in the end */
+  content: '';
+  /* absolute position */
+  position: absolute;
+  /* set position to right bottom corner of text */
+  right: 0;
+  /* set width and height */
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  /* bg color = bg color under block */
+  background: white;
+}

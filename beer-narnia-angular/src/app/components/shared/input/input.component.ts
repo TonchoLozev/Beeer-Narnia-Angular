@@ -16,7 +16,7 @@ export class InputComponent implements OnInit {
   @Input() iconLeave: Function;
   @Input() error: boolean;
 
-  @Input() value: string;
+  @Input() value;
   @Output() setValue = new EventEmitter();
 
   constructor() {
