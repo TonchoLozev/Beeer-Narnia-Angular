@@ -1,5 +1,14 @@
 <div class="button">
-  <i *ngIf="iconClass" class="{{iconClass}}" (click)="buttonClick"></i>
+  <i
+    *ngIf="link && iconClass"
+    class="{{iconClass}}"
+    (click)="buttonClick ? buttonClick(link): ''">
+  </i>
+  <i
+    *ngIf="!link && iconClass"
+    class="{{iconClass}}"
+    (click)="buttonClick ? buttonClick(): ''">
+  </i>
   <button *ngIf="link && type"
           class="{{class}}"
           type="{{type}}"

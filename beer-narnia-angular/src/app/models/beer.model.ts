@@ -1,5 +1,6 @@
 export interface Beer {
-  id: string,
+  _id: string,
+  count: number,
   country: string;
   description: string;
   img: string;

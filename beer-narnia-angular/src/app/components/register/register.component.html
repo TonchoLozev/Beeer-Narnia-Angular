@@ -8,6 +8,7 @@
       [label]="'User Name'"
       [class]="'register-inputs'"
       [iconClass]="'icon-cross'"
+      [placeHolder]="'e.g John.cena'"
       [name]="'username'"
       [type]="'text'"
       [(value)]="model.username"
@@ -20,6 +21,7 @@
       [label]="'Email'"
       [class]="'register-inputs'"
       [iconClass]="'icon-cross'"
+      [placeHolder]="'e.g jsmith@example.com'"
       [name]="'email'"
       [type]="'text'"
       [(value)]="model.email"
@@ -53,6 +55,8 @@
       [iconLeave]="hideRepeatPassword"
     >
     </app-input>
+
+    <p>Password must be with at least one upper case letter, one number and one special characters</p>
 
     <app-button
       [label]="'Register'"

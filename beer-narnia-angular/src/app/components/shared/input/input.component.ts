@@ -11,6 +11,7 @@ export class InputComponent implements OnInit {
   @Input() class: string;
   @Input() type: string;
   @Input() iconClass: string;
+  @Input() placeHolder: string;
   @Input() iconClick: Function;
   @Input() iconDownUp: Function;
   @Input() iconLeave: Function;

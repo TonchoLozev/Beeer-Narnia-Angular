@@ -14,14 +14,15 @@ import {HomeModule} from './components/home/home.module';
 import {SharedModule} from './components/shared/shared.module';
 import {LoginModule} from "./components/login/login.module";
 import {RegisterModule} from "./components/register/register.module";
-
+import {CartModule} from "./components/cart/cart.module";
 import {AppComponent} from './app.component';
 
 import {AuthService} from "./services/auth.service";
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,8 @@ import {AuthService} from "./services/auth.service";
     AppRoutesModule,
     SharedModule,
     LoginModule,
-    RegisterModule
+    RegisterModule,
+    CartModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

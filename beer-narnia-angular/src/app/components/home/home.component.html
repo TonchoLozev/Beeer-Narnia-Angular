@@ -1,7 +1,8 @@
 <div class="home">
   <ul>
-    <li *ngFor="let beer of beersToShow; let i = index">
-      <app-beer-box [beer]="beer" [index]="i" [currentPage]="currentPage" [beers]="beers"></app-beer-box>
+    <li *ngFor="let beer of beersToShow; let i = index" (mouseenter)="hover = true" (mouseleave)="hover = false"
+        [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}">>
+      <app-beer-box [beer]="beer" [index]="i" [currentPage]="currentPage" [hover]="hover"></app-beer-box>
     </li>
   </ul>
   <ul *ngIf="pageNumbers" class="page-numbers">

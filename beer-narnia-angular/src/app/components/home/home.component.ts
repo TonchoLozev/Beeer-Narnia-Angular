@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+
 import {Store} from '@ngrx/store';
+import * as BeersActions from '../../store/actions/beers.actions';
+import {AppState} from '../../store/app.state';
 
 import {AuthService} from "../../services/auth.service";
 import {BeersService} from "../../services/beers.service";
 import {authHelper} from "../../helpers/auth";
 
 import {Beer} from "../../models/beer.model";
-import * as BeersActions from '../../store/actions/beers.actions';
-import {AppState} from '../../store/app.state';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +18,7 @@ import {AppState} from '../../store/app.state';
 export class HomeComponent implements OnInit {
   beers: Beer[];
   beersToShow: Beer[];
+  hover: boolean = false;
   pageNumbers;
   currentPage: number = 1;
   articlesPerPage: number = 8;

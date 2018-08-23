@@ -7,7 +7,8 @@ import {FooterComponent} from './footer/footer.component';
 import {InputComponent} from './input/input.component';
 import {ButtonComponent} from './button/button.component';
 import {TextAreaComponent} from './text-area/text-area.component';
-import {BeerBoxComponent } from './beer-box/beer-box.component';
+import {BeerBoxComponent} from './beer-box/beer-box.component';
+import {CartItemComponent} from './cart-item/cart-item.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {BeerBoxComponent } from './beer-box/beer-box.component';
     InputComponent,
     ButtonComponent,
     TextAreaComponent,
-    BeerBoxComponent
+    BeerBoxComponent,
+    CartItemComponent
   ],
   exports: [
     HeaderComponent,
@@ -28,7 +30,8 @@ import {BeerBoxComponent } from './beer-box/beer-box.component';
     InputComponent,
     ButtonComponent,
     TextAreaComponent,
-    BeerBoxComponent
+    BeerBoxComponent,
+    CartItemComponent
   ]
 })
 export class SharedModule {

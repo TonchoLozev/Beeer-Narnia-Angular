@@ -39,37 +39,34 @@ export class BeerBoxComponent implements OnInit {
   }
 
   addInCart(event) {
-    const index = Number(event.target.id);
-    const magicNumber = ((this.currentPage * 8) - 8) + index;
+    const indexOfBeer = Number(event.target.id);
+    const magicNumber = ((this.currentPage * 8) - 8) + indexOfBeer;
     const beer = this.beers[magicNumber];
 
+    let arrCart = [];
     this.store.select('cart').subscribe(cart => {
-      const arrCart = cart.cart;
+      arrCart = cart.cart;
+    });
 
-      let index = 0;
-      let isFound = false;
-      for (let i = 0; i < arrCart.length; i++) {
-        if (arrCart[i]._id === beer._id) {
-          index = i;
-          isFound = true;
-          break;
-        }
+    let index = 0;
+    let isFound = false;
+    for (let i = 0; i < arrCart.length; i++) {
+      if (arrCart[i]._id === beer._id) {
+        index = i;
+        isFound = true;
+        break;
       }
+    }
 
-      if (isFound) {
-        arrCart[index].count += Number(this.count);
-      }
-      else {
-        beer.count = Number(this.count);
-        arrCart.push(beer);
-        this.store.dispatch(new CartActions.UpdateCartItemsNumber(arrCart.length));
-      }
-      this.store.dispatch(new CartActions.UpdateCart(arrCart));
-      sessionStorage.setItem('cart', JSON.stringify(cart));
-    })
-
-    this.store.select('cart').subscribe(cart =>{
-      console.log(cart)
-    })
+    if (isFound) {
+      arrCart[index].count += Number(this.count);
+    }
+    else {
+      beer.count = Number(this.count);
+      arrCart.push(beer);
+      this.store.dispatch(new CartActions.UpdateCartItemsNumber(arrCart.length));
+    }
+    this.store.dispatch(new CartActions.UpdateCart(arrCart));
+    sessionStorage.setItem('cart', JSON.stringify(arrCart));
   }
 }

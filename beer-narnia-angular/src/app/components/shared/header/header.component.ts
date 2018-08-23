@@ -16,7 +16,7 @@ import {ToastrService} from "ngx-toastr";
 export class HeaderComponent {
   username: string;
   isAdmin: boolean;
-  itemsCount = 5;
+  itemsCount: number;
 
   constructor(
     private router: Router,
@@ -32,6 +32,10 @@ export class HeaderComponent {
     this.store.select('user').subscribe(user => {
       this.username = user.username;
       this.isAdmin = user.isAdmin;
+    });
+
+    this.store.select('cart').subscribe(cart => {
+      this.itemsCount = cart.cartItemsNumber;
     })
   }
 

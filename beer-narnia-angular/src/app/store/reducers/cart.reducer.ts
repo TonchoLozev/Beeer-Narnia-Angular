@@ -8,9 +8,9 @@ const initialState = {cart: initCart, cartItemsNumber: initCart.length};
 export function cartReducer(state = initialState, action: CartActions.Actions) {
   switch (action.type) {
     case CartActions.UPDATE_CART:
-      return {...state, cart: action.payload.cart};
+      return state;
     case CartActions.UPDATE_CART_ITEMS_NUMBER:
-      return {...state, cartItemsNumber: action.payload.cartItemsNumber};
+      return {...state, cartItemsNumber: action.payload};
     default:
       return state;
   }
