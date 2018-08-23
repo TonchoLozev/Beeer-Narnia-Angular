@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
-import {Store} from "@ngrx/store";
-import {AppState} from "../../../store/app.state";
+import {Store} from '@ngrx/store';
+import {AppState} from '../../../store/app.state';
 
-import {AuthService} from "../../../services/auth.service";
-import {ToastrService} from "ngx-toastr";
+import {AuthService} from '../../../services/auth.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -18,12 +18,10 @@ export class HeaderComponent {
   isAdmin: boolean;
   itemsCount: number;
 
-  constructor(
-    private router: Router,
-    private store: Store<AppState>,
-    public authService: AuthService,
-    private toastr: ToastrService,
-  ) {
+  constructor(private router: Router,
+              private store: Store<AppState>,
+              public authService: AuthService,
+              private toastr: ToastrService,) {
     this.changeLink = this.changeLink.bind(this);
     this.logout = this.logout.bind(this);
   }
@@ -36,7 +34,7 @@ export class HeaderComponent {
 
     this.store.select('cart').subscribe(cart => {
       this.itemsCount = cart.cartItemsNumber;
-    })
+    });
   }
 
   changeLink(link) {
@@ -54,6 +52,6 @@ export class HeaderComponent {
       this.toastr.success('You are logged out now');
 
       window.location.reload();
-    })
+    });
   }
 }

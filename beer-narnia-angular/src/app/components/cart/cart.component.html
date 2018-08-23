@@ -1,8 +1,11 @@
 <div class="cart">
   <ul *ngIf="cartItems">
-    <li *ngFor="let beer of cartItems; let i = index" (mouseenter)="hover = true" (mouseleave)="hover = false"
-        [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}">
-      <app-cart-item [beer]="beer" [index]="i" [hover]="hover"></app-cart-item>
+    <li
+      *ngFor="let beer of cartItems; let i = index">
+      <app-cart-item
+        [beer]="beer"
+        [index]="i">
+      </app-cart-item>
     </li>
   </ul>
   <p *ngIf="!cartItems">

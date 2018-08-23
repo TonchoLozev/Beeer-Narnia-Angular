@@ -9,6 +9,8 @@ import {ButtonComponent} from './button/button.component';
 import {TextAreaComponent} from './text-area/text-area.component';
 import {BeerBoxComponent} from './beer-box/beer-box.component';
 import {CartItemComponent} from './cart-item/cart-item.component';
+import {BeerDetailsComponent} from './beer-details/beer-details.component';
+import {BeerDetailsEditableComponent} from './beer-details-editable/beer-details-editable.component';
 
 @NgModule({
   imports: [
@@ -22,7 +24,9 @@ import {CartItemComponent} from './cart-item/cart-item.component';
     ButtonComponent,
     TextAreaComponent,
     BeerBoxComponent,
-    CartItemComponent
+    CartItemComponent,
+    BeerDetailsComponent,
+    BeerDetailsEditableComponent
   ],
   exports: [
     HeaderComponent,
@@ -31,7 +35,9 @@ import {CartItemComponent} from './cart-item/cart-item.component';
     ButtonComponent,
     TextAreaComponent,
     BeerBoxComponent,
-    CartItemComponent
+    CartItemComponent,
+    BeerDetailsComponent,
+    BeerDetailsEditableComponent
   ]
 })
 export class SharedModule {

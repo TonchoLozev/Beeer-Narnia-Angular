@@ -1,5 +1,10 @@
-<div class="beer-box">
-  <img class="image" src="{{beer.img}}" alt="{{beer.name}}"/>
+<div
+  class="beer-box"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+  [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}"
+>
+  <img class="image" src="{{beer.img}}" alt="{{beer.name}}" (click)="openBeerDetails(beer._id)"/>
   <label class="name">{{beer.name}}</label>
   <p class="description">{{beer.description}}</p>
   <label class="price">{{beer.price}}&euro;</label>
@@ -7,6 +12,7 @@
     <input
       [(ngModel)]="count"
       type="number"
+      [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}"
     >
     <i
       class="icon-plus"

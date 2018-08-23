@@ -1,26 +1,31 @@
-<div class="cart-item">
-  <img class="image" src="{{beer.img}}" alt="{{beer.name}}">
-  <div class="info">
-    <label class="name">Name: {{beer.name}}</label>
-    <label class="price">Price: {{beer.price}}&euro;</label>
-    <div class="count">
-      <label>Quantity: </label>
-      <div class="buttons">
-        <input
-          [(ngModel)]="count"
-          type="number"
-          [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}"
-        >
-        <i
-          class="icon-plus"
-          (click)="plusCount()"
-        ></i>
-        <i
-          class="icon-minus"
-          (click)="minusCount()"
-        ></i>
+<div class="cart-item-wrapper"
+     (mouseenter)="hover = true"
+     (mouseleave)="hover = false"
+     [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}">
+  <div class="cart-item">
+    <img class="image" src="{{beer.img}}" alt="{{beer.name}}" (click)="openBeerDetails(beer._id)">
+    <div class="info">
+      <label class="name">Name: {{beer.name}}</label>
+      <label class="price">Price: {{beer.price}}&euro;</label>
+      <div class="count">
+        <label>Quantity: </label>
+        <div class="buttons">
+          <input
+            [(ngModel)]="count"
+            type="number"
+            [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}"
+          >
+          <i
+            class="icon-plus"
+            (click)="plusCount()"
+          ></i>
+          <i
+            class="icon-minus"
+            (click)="minusCount()"
+          ></i>
+        </div>
       </div>
     </div>
   </div>
+  <button (click)="removeItem($event)" data-id="{{index}}">Remove</button>
 </div>
-<button (click)="removeItem($event)" data-id="{{index}}">Remove</button>

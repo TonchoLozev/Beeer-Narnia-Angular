@@ -1,0 +1,28 @@
+<div class="beer-details" *ngIf="beer">
+  <label>{{beer.name}}</label>
+  <img src="{{beer.img}}"/>
+  <span>Country</span>
+  <p>{{beer.country}}</p>
+  <span>Type</span>
+  <p>{{beer.type}}</p>
+  <span>Description</span>
+  <p>{{beer.description}}</p>
+  <span>Price</span>
+  <p>{{beer.price}}&euro;</p>
+  <div class="buttons">
+    <input
+      [(ngModel)]="count"
+      type="number"
+      [ngStyle]="{'background-color': hover ? '#f7f7f7' :  'white'}"
+    >
+    <i
+      class="icon-plus"
+      (click)="plusCount()"
+    ></i>
+    <i
+      class="icon-minus"
+      (click)="minusCount()"
+    ></i>
+  </div>
+  <button (click)="addInCart($event)">Add in cart</button>
+</div>

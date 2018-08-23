@@ -1,13 +1,21 @@
-.cart-item{
+.cart-item-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 180px;
+  align-items: center;
+}
+
+.cart-item {
   display: flex;
 }
 
-.image{
+.image {
   height: 100px;
   width: 75px;
 }
 
-.info{
+.info {
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -15,9 +23,10 @@
   font-size: 14px;
 }
 
-.count{
+.count {
   display: flex;
 }
+
 img:hover {
   cursor: pointer;
 }

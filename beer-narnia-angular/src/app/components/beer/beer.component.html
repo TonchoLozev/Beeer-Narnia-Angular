@@ -1,0 +1,4 @@
+<div class="beer">
+  <app-beer-details-editable *ngIf="isAdmin" [beer]="beer"></app-beer-details-editable>
+  <app-beer-details *ngIf="!isAdmin" [beer]="beer"></app-beer-details>
+</div>

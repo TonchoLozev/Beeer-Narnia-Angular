@@ -4,11 +4,11 @@ import {Store} from '@ngrx/store';
 import * as BeersActions from '../../store/actions/beers.actions';
 import {AppState} from '../../store/app.state';
 
-import {AuthService} from "../../services/auth.service";
-import {BeersService} from "../../services/beers.service";
-import {authHelper} from "../../helpers/auth";
+import {AuthService} from '../../services/auth.service';
+import {BeersService} from '../../services/beers.service';
+import {authHelper} from '../../helpers/auth';
 
-import {Beer} from "../../models/beer.model";
+import {Beer} from '../../models/beer.model';
 
 @Component({
   selector: 'app-home',
@@ -18,16 +18,13 @@ import {Beer} from "../../models/beer.model";
 export class HomeComponent implements OnInit {
   beers: Beer[];
   beersToShow: Beer[];
-  hover: boolean = false;
   pageNumbers;
   currentPage: number = 1;
   articlesPerPage: number = 8;
 
-  constructor(
-    public authService: AuthService,
-    public beersService: BeersService,
-    private store: Store<AppState>
-  ) {
+  constructor(public authService: AuthService,
+              public beersService: BeersService,
+              private store: Store<AppState>) {
     this.ngOnInit = this.ngOnInit.bind(this);
     this.createPages = this.createPages.bind(this);
     this.changeCurrentPageNumber = this.changeCurrentPageNumber.bind(this);
@@ -48,9 +45,9 @@ export class HomeComponent implements OnInit {
             const indexOfLastTodo = this.currentPage * this.articlesPerPage;
             const indexOfFirstTodo = indexOfLastTodo - this.articlesPerPage;
             this.beersToShow = this.beers.slice(indexOfFirstTodo, indexOfLastTodo);
-          })
+          });
         });
-      })
+      });
     } else {
       this.beersService.getAllBeers().subscribe(beers => {
         this.store.dispatch(new BeersActions.InitBeers({beers}));
@@ -63,7 +60,7 @@ export class HomeComponent implements OnInit {
           const indexOfFirstTodo = indexOfLastTodo - this.articlesPerPage;
 
           this.beersToShow = this.beers.slice(indexOfFirstTodo, indexOfLastTodo);
-        })
+        });
       });
     }
   }

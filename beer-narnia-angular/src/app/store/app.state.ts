@@ -5,4 +5,5 @@ export interface AppState {
   readonly user: User;
   readonly beers: Beer[];
   readonly cart;
+  readonly beer;
 }
