@@ -1,0 +1,47 @@
+<div class="request-access-form">
+  <div class="form">
+    <app-input
+      [label]="'First Name'"
+      [class]="'request-access-inputs'"
+      [iconClass]="'icon-cross'"
+      [name]="'first-name'"
+      [type]="'text'"
+      [(value)]="request.firstname"
+      (setValue)="this.request.firstname = $event"
+      [iconClick]="deleteFirstNameInput"
+    ></app-input>
+    <app-input
+      [label]="'Last Name'"
+      [class]="'request-access-inputs'"
+      [iconClass]="'icon-cross'"
+      [name]="'last-name'"
+      [type]="'text'"
+      [(value)]="request.lastname"
+      (setValue)="this.request.lastname = $event"
+      [iconClick]="deleteLastNameInput"
+    ></app-input>
+    <app-text-area
+      [label]="'Reason for access'"
+      [class]="'request-access-textarea'"
+      [name]="'reason'"
+      [type]="'text'"
+      [(value)]="request.reason"
+      (setValue)="this.request.reason = $event"
+    >
+    </app-text-area>
+    <div class="buttons">
+      <app-button
+        [label]="'Send request'"
+        [class]="'send-request-button'"
+        [buttonClick]="sendRequest"
+        [type]="'submit'">
+      </app-button>
+      <app-button
+        [label]="'Cancel'"
+        [class]="'cancel-request-button'"
+        [buttonClick]="cancel"
+        [type]="'button'">
+      </app-button>
+    </div>
+  </div>
+</div>

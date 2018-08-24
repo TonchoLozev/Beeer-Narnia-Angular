@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Store} from "@ngrx/store";
-import {AppState} from "../../store/app.state";
+import {Store} from '@ngrx/store';
+import {AppState} from '../../store/app.state';
 import * as UserActions from '../../store/actions/user.actions';
 
-import {RegisterModel} from "./register.model";
+import {RegisterModel} from './register.model';
 
-import {Router} from "@angular/router";
-import {AuthService} from "../../services/auth.service";
-import {RolesService} from "../../services/roles.service";
-import {ToastrService} from "ngx-toastr";
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+import {RolesService} from '../../services/roles.service';
+import {ToastrService} from 'ngx-toastr';
 
-import validateRegister from "../../helpers/validations/validateRegister";
-import {authHelper} from "../../helpers/auth";
+import validateRegister from '../../helpers/validations/validateRegister';
+import {authHelper} from '../../helpers/auth';
 
 
 @Component({
@@ -25,13 +25,11 @@ export class RegisterComponent implements OnInit {
   passwordShow: boolean = false;
   repeatPasswordShow: boolean = false;
 
-  constructor(
-    private router: Router,
-    public authService: AuthService,
-    public rolesService: RolesService,
-    private toastr: ToastrService,
-    private store: Store<AppState>
-  ) {
+  constructor(private router: Router,
+              public authService: AuthService,
+              public rolesService: RolesService,
+              private toastr: ToastrService,
+              private store: Store<AppState>) {
 
     this.deleteUserNameInput = this.deleteUserNameInput.bind(this);
     this.deleteEmailInput = this.deleteEmailInput.bind(this);
@@ -60,9 +58,8 @@ export class RegisterComponent implements OnInit {
 
         this.store.dispatch(new UserActions.InitUser({username: userInfo.username}));
 
-        this.toastr.success('Successfully registered');
         this.router.navigateByUrl(`home`);
-
+        this.toastr.success('Successfully registered');
       }, err => {
         if (err.status === 409) {
           this.toastr.error('Username already exists');
@@ -71,9 +68,8 @@ export class RegisterComponent implements OnInit {
         }
         return;
       });
-
     } else {
-      this.toastr.error(validateReg)
+      this.toastr.error(validateReg);
     }
   }
 

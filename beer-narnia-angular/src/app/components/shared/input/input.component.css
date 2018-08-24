@@ -1,6 +1,8 @@
 .input {
+  padding-top: 25px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 15px;
 }
 
 input:-webkit-autofill {
@@ -8,7 +10,7 @@ input:-webkit-autofill {
 }
 
 label {
-  padding-bottom: 20px;
+  padding-bottom: 7px;
   height: 19px;
   font-size: 15px;
   font-weight: normal;
@@ -51,6 +53,16 @@ i {
   padding-bottom: 7px;
 }
 
-.icon-cross{
+.icon-cross {
   font-size: 13px;
+}
+
+.request-access-inputs:focus {
+  outline: none;
+}
+
+.request-access-inputs {
+  border-width: 0;
+  width: 448px;
+  padding-bottom: 7px;
 }

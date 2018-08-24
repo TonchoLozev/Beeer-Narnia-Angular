@@ -1,20 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Store} from "@ngrx/store";
-import {AppState} from "../../store/app.state";
+import {Store} from '@ngrx/store';
+import {AppState} from '../../store/app.state';
 import * as UserActions from '../../store/actions/user.actions';
 
-import {LoginModel} from "./login.model";
+import {LoginClass} from './login.class';
 
-import {AuthService} from "../../services/auth.service";
+import {AuthService} from '../../services/auth.service';
 import {ToastrService} from 'ngx-toastr';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 import validateLogin from '../../helpers/validations/validateLogin';
-import {authHelper} from '../../helpers/auth'
-
-import {Observable} from "rxjs";
-import {User} from "../../models/user.model";
+import {authHelper} from '../../helpers/auth';
 
 
 @Component({
@@ -23,15 +20,13 @@ import {User} from "../../models/user.model";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  model: LoginModel;
+  model: LoginClass;
   passwordShow: boolean = false;
 
-  constructor(
-    private store: Store<AppState>,
-    private router: Router,
-    public authService: AuthService,
-    private toastr: ToastrService
-  ) {
+  constructor(private store: Store<AppState>,
+              private router: Router,
+              public authService: AuthService,
+              private toastr: ToastrService) {
 
     this.deleteUserNameInput = this.deleteUserNameInput.bind(this);
     this.showPassword = this.showPassword.bind(this);
@@ -41,14 +36,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.model = new LoginModel('', '');
+    this.model = new LoginClass('', '');
   }
 
   onSubmit() {
     if (!validateLogin(this.model.username, this.model.password)) {
       this.authService.login(this.model.username, this.model.password).subscribe(userInfo => {
-
         authHelper.saveSession(userInfo);
+
         sessionStorage.setItem('roleId', userInfo._kmd.roles[0].roleId);
 
         this.store.dispatch(new UserActions.InitUser({username: userInfo.username}));
@@ -56,10 +51,10 @@ export class LoginComponent implements OnInit {
         this.toastr.success('Successfully logged in');
         this.router.navigateByUrl(`home`);
       }, err => {
-        this.toastr.error('Invalid credentials')
+        this.toastr.error('Invalid credentials');
       });
     } else {
-      this.toastr.error('Invalid credentials')
+      this.toastr.error('Invalid credentials');
     }
   }
 

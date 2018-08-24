@@ -1,5 +1,4 @@
 .beer {
-  min-height: 813px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,5 +13,114 @@ app-beer-details {
 
 app-beer-details-editable {
   display: flex;
+  width: 100%;
   justify-content: center;
+}
+
+.comments {
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.title{
+  margin-bottom: 20px;
+}
+
+li{
+  margin-bottom: 20px;
+}
+
+.comment{
+  display: flex;
+}
+
+.content-and-time{
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  font-size: 13px;
+  border-bottom: 1px solid #a5a5a5;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.time{
+  font-size: 9px;
+}
+
+.icon-cross{
+  font-size: 11px;
+  align-self: center;
+  margin-left: 5px;
+}
+
+.icon-cross:hover{
+  cursor: pointer;
+}
+
+.post-comment{
+  width: 100%;
+}
+
+.post-comment-area{
+  padding-top: 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.post-comment label{
+  padding-bottom: 12px;
+  height: 19px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  color: #475155;
+}
+
+.post-comment textarea{
+  border-width: 0;
+  width: 300px;
+  height: 50px;
+  padding-bottom: 7px;
+  resize: none;
+  font-size: 12px;
+}
+
+.post-comment textarea:focus{
+  outline: none;
+}
+
+.input-and-icon{
+  border-bottom: 1px solid #a5a5a5;
+  border-top: 1px solid #a5a5a5;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.input-and-icon i{
+  cursor: pointer;
+}
+
+.beer p{
+  width: 100%;
 }

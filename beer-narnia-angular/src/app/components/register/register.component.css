@@ -16,10 +16,6 @@ form{
   flex-direction: column;
 }
 
-.register-form app-input {
-  padding-bottom: 22px;
-}
-
 p{
   margin-bottom: 26px;
   font-size: 11px;

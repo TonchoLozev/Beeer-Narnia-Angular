@@ -1,4 +1,4 @@
-.nav-button{
+.nav-button {
   height: 20px;
   background: none;
   color: white;
@@ -7,32 +7,32 @@
   font-size: 15px;
 }
 
-.nav-button:hover{
+.nav-button:hover {
   cursor: pointer;
   color: #f2f2f2;
 }
 
-.login-button{
+.login-button {
   background: none;
   border: none;
   padding: 0;
 }
 
-.login-button:hover{
+.login-button:hover {
   cursor: pointer;
 }
 
-.register-button{
+.register-button {
   background: none;
   border: none;
   padding: 0;
 }
 
-.register-button:hover{
+.register-button:hover {
   cursor: pointer;
 }
 
-.icon-users{
+.icon-users {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,27 @@
   margin-top: 19px;
 }
 
-.icon-users:hover{
+.icon-users:hover {
   cursor: pointer;
   color: #f2f2f2;
+}
+
+.cancel-request-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.cancel-request-button:hover {
+  cursor: pointer;
+}
+
+.send-request-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.send-request-button:hover {
+  cursor: pointer;
 }

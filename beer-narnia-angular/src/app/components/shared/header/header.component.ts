@@ -49,8 +49,8 @@ export class HeaderComponent {
       sessionStorage.removeItem('email');
       sessionStorage.removeItem('userId');
 
-      this.toastr.success('You are logged out now');
-
+      this.toastr.info('You are logged out now');
+      this.router.navigateByUrl('home');
       window.location.reload();
     });
   }

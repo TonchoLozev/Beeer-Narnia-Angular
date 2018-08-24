@@ -7,10 +7,6 @@
   flex: 1 0 auto;
 }
 
-app-input{
-  padding-bottom: 22px;
-}
-
 form{
   display: flex;
   flex-direction: column;

@@ -1,4 +1,28 @@
 <div class="beer">
   <app-beer-details-editable *ngIf="isAdmin" [beer]="beer"></app-beer-details-editable>
   <app-beer-details *ngIf="!isAdmin" [beer]="beer"></app-beer-details>
+  <p *ngIf="!isLogged">You have to be logged in to post comments</p>
+  <div *ngIf="isLogged" class="post-comment">
+    <div class="post-comment-area">
+      <label>Post a comment</label>
+      <div class="input-and-icon">
+        <textarea [(ngModel)]="comment"></textarea>
+        <i class="icon-checkmark" (click)="postComment()"></i>
+      </div>
+    </div>
+  </div>
+  <div class="comments">
+    <span class="title">Comments</span>
+    <ul *ngIf="comments">
+      <li *ngFor="let comment of comments">
+        <div class="comment">
+          <div class="content-and-time">
+            <span class="content">{{comment.content}}</span>
+            <span class="time">posted {{calcCommentTime(comment._kmd.ect)}} by {{comment.author}}</span>
+          </div>
+          <i class="icon-cross" *ngIf="username === comment.author || isAdmin" (click)="deleteComment(comment._id)"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

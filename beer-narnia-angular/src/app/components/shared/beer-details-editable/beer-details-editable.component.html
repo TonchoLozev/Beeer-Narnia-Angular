@@ -1,3 +1,40 @@
-<p>
-  beer-details-editable works!
-</p>
+<div class="beer-details-editable" *ngIf="beer">
+  <span>Name</span>
+  <input [(ngModel)]="beer.name"/>
+  <img src="{{beer.img}}">
+  <span>Image URL</span>
+  <input [(ngModel)]="beer.img">
+  <span>Country</span>
+  <input [(ngModel)]="beer.country">
+  <span>Type</span>
+  <input [(ngModel)]="beer.type">
+  <span>Description</span>
+  <textarea [(ngModel)]="beer.description"></textarea>
+  <span>Price in euro</span>
+  <input [(ngModel)]="beer.price">
+  <div class="buttons">
+    <button (click)="openModal('save')">Save changes</button>
+    <sc-modal id="save" class="default" #modal>
+      <div class="modal">
+        <span>Are you sure you want to save the changes?</span>
+        <div class="save-changes-buttons">
+          <button (click)="saveChanges()">Yes</button>
+          <button (click)="closeModal('save')">No</button>
+        </div>
+      </div>
+      <div class="modal-background"></div>
+    </sc-modal>
+    <button (click)="cancel()">Cancel</button>
+    <sc-modal id="delete" class="default"#modal>
+      <div class="modal">
+        <span>Are you sure you want to delete the article?</span>
+        <div class="save-changes-buttons">
+          <button (click)="deleteArticle()">Yes</button>
+          <button (click)="closeModal('delete')">No</button>
+        </div>
+      </div>
+      <div class="modal-background"></div>
+    </sc-modal>
+    <button (click)="openModal('delete')">Delete article</button>
+  </div>
+</div>

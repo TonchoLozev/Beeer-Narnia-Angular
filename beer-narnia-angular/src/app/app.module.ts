@@ -17,6 +17,7 @@ import {LoginModule} from './components/login/login.module';
 import {RegisterModule} from './components/register/register.module';
 import {CartModule} from './components/cart/cart.module';
 import {BeerModule} from './components/beer/beer.module';
+import {RequestAccessModule} from './components/request-access/request-access.module';
 
 import {AppComponent} from './app.component';
 
@@ -43,7 +44,8 @@ import {AuthService} from './services/auth.service';
     LoginModule,
     RegisterModule,
     CartModule,
-    BeerModule
+    BeerModule,
+    RequestAccessModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

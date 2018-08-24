@@ -28,6 +28,8 @@
     *ngIf="username && !isAdmin"
     [class]="'nav-button'"
     [label]="'Request access'"
+    [link]="'request-access'"
+    [buttonClick]="changeLink"
     [type]="'button'">
   </app-button>
 

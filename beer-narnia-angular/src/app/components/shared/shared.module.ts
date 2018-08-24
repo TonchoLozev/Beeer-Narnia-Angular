@@ -11,11 +11,13 @@ import {BeerBoxComponent} from './beer-box/beer-box.component';
 import {CartItemComponent} from './cart-item/cart-item.component';
 import {BeerDetailsComponent} from './beer-details/beer-details.component';
 import {BeerDetailsEditableComponent} from './beer-details-editable/beer-details-editable.component';
+import {ScModalModule} from "angular-5-popup";
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ScModalModule,
   ],
   declarations: [
     HeaderComponent,
