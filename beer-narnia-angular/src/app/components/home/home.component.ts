@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.changeCurrentPageNumber = this.changeCurrentPageNumber.bind(this);
   }
 
-   ngOnInit() {
+  ngOnInit() {
     if (!authHelper.isAuth()) {
       this.authService.login('guest', 'guest').subscribe(userInfo => {
         sessionStorage.setItem('authtoken', userInfo._kmd.authtoken);
@@ -50,9 +50,9 @@ export class HomeComponent implements OnInit {
         });
       });
     } else {
-       this.beersService.getAllBeers().subscribe(  beers => {
-         this.store.dispatch(new BeersActions.InitBeers({beers}));
-         this.store.select('beers').subscribe(beers => {
+      this.beersService.getAllBeers().subscribe(beers => {
+        this.store.dispatch(new BeersActions.InitBeers({beers}));
+        this.store.select('beers').subscribe(beers => {
           this.beers = beers['beers'];
 
           this.pageNumbers = this.createPages();
@@ -61,8 +61,6 @@ export class HomeComponent implements OnInit {
           const indexOfFirstTodo = indexOfLastTodo - this.articlesPerPage;
 
           this.beersToShow = this.beers.slice(indexOfFirstTodo, indexOfLastTodo);
-        }, error =>{
-          console.log(error)
         });
       });
     }

@@ -58,6 +58,7 @@ export class RegisterComponent implements OnInit {
 
         this.store.dispatch(new UserActions.InitUser({username: userInfo.username}));
 
+        window.location.reload();
         this.router.navigateByUrl(`home`);
         this.toastr.success('Successfully registered');
       }, err => {
