@@ -1,7 +1,8 @@
 export interface Request {
-  userId: string,
-  username: string,
-  firstname: string,
-  lastname: string,
-  reason: string
+  _id: string;
+  userId: string;
+  username: string;
+  firstname: string;
+  lastname: string;
+  reason: string;
 }

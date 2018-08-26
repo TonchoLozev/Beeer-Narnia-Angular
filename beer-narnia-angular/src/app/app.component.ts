@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 
-import {Store} from "@ngrx/store";
-import {AppState} from "./store/app.state";
 
 @Component({
   selector: 'app-root',
@@ -9,16 +7,12 @@ import {AppState} from "./store/app.state";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  username;
 
-  constructor(
-    private store: Store<AppState>
-  ) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.store.select('user').subscribe(user => {
-      this.username = user.username;
-    })
+
   }
+
 }

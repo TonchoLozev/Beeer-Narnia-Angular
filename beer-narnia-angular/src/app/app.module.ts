@@ -9,6 +9,7 @@ import {userReducer} from './store/reducers/user.reducer';
 import {beersReducer} from './store/reducers/beers.reducer';
 import {cartReducer} from './store/reducers/cart.reducer';
 import {beerReducer} from './store/reducers/beer.reducer';
+import {requestsReducer} from './store/reducers/requests.reducer';
 
 import {AppRoutesModule} from './routes/routes.module';
 import {HomeModule} from './components/home/home.module';
@@ -18,6 +19,7 @@ import {RegisterModule} from './components/register/register.module';
 import {CartModule} from './components/cart/cart.module';
 import {BeerModule} from './components/beer/beer.module';
 import {RequestAccessModule} from './components/request-access/request-access.module';
+import {RequestsModule} from './components/requests/requests.module';
 
 import {AppComponent} from './app.component';
 
@@ -36,7 +38,8 @@ import {AuthService} from './services/auth.service';
       user: userReducer,
       beers: beersReducer,
       cart: cartReducer,
-      beer: beerReducer
+      beer: beerReducer,
+      requests: requestsReducer
     }),
     BrowserAnimationsModule,
     AppRoutesModule,
@@ -45,7 +48,8 @@ import {AuthService} from './services/auth.service';
     RegisterModule,
     CartModule,
     BeerModule,
-    RequestAccessModule
+    RequestAccessModule,
+    RequestsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+<div class="requests" *ngIf="requests">
+  <div class="info">
+    <i class="icon-user-plus"></i>
+    <i class="icon-user-minus"></i>
+    <span>Username</span>
+    <span>First name</span>
+    <span>Last name</span>
+    <span>Reason</span>
+  </div>
+  <ul>
+    <li *ngFor="let request of requests;let i = index">
+      <app-request [request]="request">
+
+      </app-request>
+    </li>
+  </ul>
+</div>

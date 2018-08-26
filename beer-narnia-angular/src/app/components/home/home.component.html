@@ -1,4 +1,7 @@
 <div class="home">
+  <div class="welcome" *ngIf="username">
+    <p>Welcome, {{username}}!</p>
+  </div>
   <ul>
     <li *ngFor="let beer of beersToShow; let i = index">
       <app-beer-box

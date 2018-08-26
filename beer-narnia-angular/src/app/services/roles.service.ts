@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {HttpHeaders} from '@angular/common/http';
 import {throwError} from 'rxjs';
-import {authHelper} from "../helpers/auth";
+import {authHelper} from '../helpers/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class RolesService {
   constructor(private http: HttpClient) {
   }
 
-  makeRegularUser(userId): Observable<any>{
+  makeRegularUser(userId): Observable<any> {
 
     if (arguments.length < 1 || arguments.length > 1 || typeof (userId) !== 'string') {
       throw new Error('Invalid number of arguments or arguments are from different type');
@@ -65,14 +65,10 @@ export class RolesService {
       'Authorization': authHelper.makeAuth('kinvey')
     });
 
-    this.removeRegularRole(userId).subscribe(userInfo => {
-      return this.http.post(this.addRoleUrl, bodyString, {headers: headers})
-        .map((res: Response) => {
-          return res;
-        })
-        .catch((error: any) => throwError(error || 'Server error'));
-    }, err => {
-      console.log(err)
-    });
+    return this.http.post(this.addRoleUrl, bodyString, {headers: headers})
+      .map((res: Response) => {
+        return res;
+      })
+      .catch((error: any) => throwError(error || 'Server error'));
   }
 }

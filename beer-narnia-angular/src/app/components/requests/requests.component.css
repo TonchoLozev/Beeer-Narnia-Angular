@@ -1,0 +1,33 @@
+.requests {
+  min-height: 613px;
+  margin-top: 50px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #a5a5a5;
+}
+
+.info i {
+  color: white;
+}
+
+.info sc-modal{
+  width: 0;
+}
+
+.info span{
+  width: 100px;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+li{
+  border-bottom: 1px solid #a5a5a5;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

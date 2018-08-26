@@ -17,7 +17,7 @@
     <sc-modal id="save" class="default" #modal>
       <div class="modal">
         <span>Are you sure you want to save the changes?</span>
-        <div class="save-changes-buttons">
+        <div class="modal-buttons">
           <button (click)="saveChanges()">Yes</button>
           <button (click)="closeModal('save')">No</button>
         </div>
@@ -28,7 +28,7 @@
     <sc-modal id="delete" class="default"#modal>
       <div class="modal">
         <span>Are you sure you want to delete the article?</span>
-        <div class="save-changes-buttons">
+        <div class="modal-buttons">
           <button (click)="deleteArticle()">Yes</button>
           <button (click)="closeModal('delete')">No</button>
         </div>

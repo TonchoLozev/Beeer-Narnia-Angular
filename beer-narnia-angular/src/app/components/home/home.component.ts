@@ -16,6 +16,7 @@ import {Beer} from '../../models/beer.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  username;
   beers: Beer[];
   beersToShow: Beer[];
   pageNumbers;
@@ -50,6 +51,9 @@ export class HomeComponent implements OnInit {
         });
       });
     } else {
+      this.store.select('user').subscribe(user => {
+        this.username = user.username;
+      });
       this.beersService.getAllBeers().subscribe(beers => {
         this.store.dispatch(new BeersActions.InitBeers({beers}));
         this.store.select('beers').subscribe(beers => {

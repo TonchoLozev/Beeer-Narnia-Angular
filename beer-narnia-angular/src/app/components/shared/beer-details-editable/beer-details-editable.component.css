@@ -70,13 +70,13 @@ textarea:focus {
   margin-top: 3px;
 }
 
-.save-changes-buttons{
+.modal-buttons{
   display: flex;
   justify-content: space-between;
   padding: 15px;
 }
 
-.save-changes-buttons button{
+.modal-buttons button{
   font-size: 15px;
   background: none;
   border: none;
@@ -84,7 +84,7 @@ textarea:focus {
   outline: none;
 }
 
-.save-changes-buttons button:hover{
+.modal-buttons button:hover{
   cursor: pointer;
 }
 

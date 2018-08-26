@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {ScModalModule} from 'angular-5-popup';
 
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
@@ -11,7 +12,7 @@ import {BeerBoxComponent} from './beer-box/beer-box.component';
 import {CartItemComponent} from './cart-item/cart-item.component';
 import {BeerDetailsComponent} from './beer-details/beer-details.component';
 import {BeerDetailsEditableComponent} from './beer-details-editable/beer-details-editable.component';
-import {ScModalModule} from "angular-5-popup";
+import {RequestComponent} from './request/request.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import {ScModalModule} from "angular-5-popup";
     BeerBoxComponent,
     CartItemComponent,
     BeerDetailsComponent,
-    BeerDetailsEditableComponent
+    BeerDetailsEditableComponent,
+    RequestComponent
   ],
   exports: [
     HeaderComponent,
@@ -39,7 +41,8 @@ import {ScModalModule} from "angular-5-popup";
     BeerBoxComponent,
     CartItemComponent,
     BeerDetailsComponent,
-    BeerDetailsEditableComponent
+    BeerDetailsEditableComponent,
+    RequestComponent
   ]
 })
 export class SharedModule {
