@@ -10,7 +10,7 @@ export const authHelper = (() => {
   }
 
   function isAuth() {
-    return sessionStorage.getItem('authtoken') !== null;
+    return sessionStorage.getItem('roleId') !== null;
   }
 
   function saveSession(userInfo) {
@@ -25,7 +25,7 @@ export const authHelper = (() => {
   }
 
   function isAdmin() {
-    return sessionStorage.getItem('roleId') === '40e731c1-824f-485b-8d98-ffb30d85b6a9'
+    return sessionStorage.getItem('roleId') === '40e731c1-824f-485b-8d98-ffb30d85b6a9';
   }
 
   return {

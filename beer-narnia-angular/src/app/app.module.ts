@@ -22,12 +22,14 @@ import {RequestAccessModule} from './components/request-access/request-access.mo
 import {RequestsModule} from './components/requests/requests.module';
 
 import {AppComponent} from './app.component';
+import {NotFoundComponent} from './components/not-found/not-found.component';
 
 import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
